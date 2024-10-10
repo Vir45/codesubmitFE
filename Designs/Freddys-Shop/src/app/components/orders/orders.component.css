@@ -1,0 +1,24 @@
+.orders-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orders-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-delivered {
+  color: green;
+}
+
+.status-processing {
+  color: red;
+}
+
+.status-shipped {
+  color: black;
+}

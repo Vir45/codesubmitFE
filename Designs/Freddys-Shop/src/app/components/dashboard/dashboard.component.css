@@ -1,0 +1,19 @@
+.dashboard-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-chart-section-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-card-section {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+ }
+

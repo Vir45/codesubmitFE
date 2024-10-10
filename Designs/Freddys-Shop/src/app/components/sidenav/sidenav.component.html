@@ -1,0 +1,16 @@
+<mat-drawer-container class="nav-container">
+  <mat-drawer mode="side" opened>
+    <div class="nav-left-container">
+      <img class="logo" src="Freddys_Logo.svg" alt=" Freddy's logo" />
+      <nav>
+        <button (click)="selectComponent('dashboard')" class="nav-item" mat-button>Dashboard</button>
+        <button (click)="selectComponent('orders')" class="nav-item" mat-button>Orders</button>
+        <button class="nav-item" mat-button>Logout</button>
+      </nav>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-dashboard *ngIf="selectedComponent === 'dashboard'"></app-dashboard>
+    <app-orders *ngIf="selectedComponent === 'orders'"></app-orders>
+  </mat-drawer-content>
+</mat-drawer-container>

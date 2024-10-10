@@ -1,0 +1,28 @@
+<!-- <h1 mat-dialog-title>Login</h1> -->
+<div class="header-content" mat-dialog-title>
+  <p>
+    Freddy's Artisanal Halloween Candy Shop
+  </p>
+  <img class="header-content-logo" src="Freddys_Logo.svg" alt=" Freddy's logo" />
+
+</div>
+<mat-dialog-content>
+  <form [formGroup]="loginForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <input matInput formControlName="username" placeholder="Enter your username" required />
+      <mat-error *ngIf="loginForm.get('username')?.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <input matInput type="password" formControlName="password" placeholder="Enter your password" required />
+      <mat-error *ngIf="loginForm.get('password')?.invalid">Required</mat-error>
+    </mat-form-field>
+  </form>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</mat-dialog-content>
+
+<div class="footer-content">
+  <button mat-stroked-button (click)="onLogin()" [disabled]="!loginForm.valid"
+    class="footer-login-button">Login</button>
+</div>

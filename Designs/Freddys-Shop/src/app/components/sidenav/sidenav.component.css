@@ -1,0 +1,37 @@
+.nav-container {
+  width: auto;
+  height: 100%;
+  background: #eee;
+}
+
+.nav-left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.nav-item {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+}
+
+.nav-item:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-item:active {
+  background-color: #d0d0d0;
+}
+
+.logo{
+  width: 70px;
+  margin-bottom: 20px;
+}

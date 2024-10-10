@@ -1,0 +1,33 @@
+<div class="dashboard-container">
+  <mat-spinner *ngIf="isLoading" diameter="160"></mat-spinner>
+  <div *ngIf="!isLoading">
+    <h1>Dashboard</h1>
+
+    <div class="dashboard-card-section">
+      <app-card [title]="todayCard.title" [content]="todayCard.content">
+      </app-card>
+
+      <app-card [title]="lastWeekCard.title" [content]="lastWeekCard.content">
+      </app-card>
+
+      <app-card [title]="lastMonthCard.title" [content]="lastMonthCard.content">
+      </app-card>
+
+    </div>
+
+    <div class="dashboard-chart-section-header">
+      <p>Revenue (last {{ viewType === ViewType.Weekly ? '7 days' : '12 months' }})</p>
+      <mat-button-toggle-group [(ngModel)]="viewType" (change)="onToggleView($event)" appearance="standard"
+        exclusive="true">
+        <mat-button-toggle [value]="ViewType.Weekly">Weekly</mat-button-toggle>
+        <mat-button-toggle [value]="ViewType.Yearly">Yearly</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <app-revenue-chart [chartData]="{
+    labels: chartData.x,
+    datasets: [{ data: chartData.y }]
+  }"></app-revenue-chart>
+    <app-bestsellers-table [bestsellers]="bestsellersTableData"></app-bestsellers-table>
+
+  </div>
